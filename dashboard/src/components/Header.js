@@ -1,4 +1,4 @@
-import { Search, Bell, User, Plus } from 'lucide-react';
+import { Search, Bell } from 'lucide-react';
 import '../styles/Header.css';
 
 function Header() {
