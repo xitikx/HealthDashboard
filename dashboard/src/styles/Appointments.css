@@ -5,6 +5,7 @@
   gap: 12px;
   width: 100%;
   min-width: 300px;
+  overflow-x: auto; /* Allow horizontal scrolling on small screens */
 }
 
 .appointments-card {
@@ -44,15 +45,110 @@
   font-size: 20px;
 }
 
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
+/* Tablet: ≤ 1024px */
+@media (max-width: 1024px) {
   .appointments-container {
-    flex-direction: column;
-    min-width: auto;
+    gap: 10px;
+    min-width: 280px;
   }
 
-  .appointments-card.blue,
+  .appointments-card {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .appointments-card.blue {
+    width: 180px;
+  }
+
   .appointments-card.purple {
-    width: 100%;
+    min-width: 200px; /* Ensure purple card doesn't shrink too much */
+  }
+
+  .appointments-title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .appointments-doctor {
+    font-size: 11px;
+  }
+
+  .appointments-icon {
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
+  .appointments-container {
+    gap: 8px;
+    min-width: 260px;
+  }
+
+  .appointments-card {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .appointments-card.blue {
+    width: 160px;
+  }
+
+  .appointments-card.purple {
+    min-width: 180px;
+  }
+
+  .appointments-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .appointments-doctor {
+    font-size: 10px;
+  }
+
+  .appointments-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 16px;
+  }
+}
+
+/* Small Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .appointments-container {
+    gap: 6px;
+    min-width: 240px;
+  }
+
+  .appointments-card {
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .appointments-card.blue {
+    width: 140px;
+  }
+
+  .appointments-card.purple {
+    min-width: 160px;
+  }
+
+  .appointments-title {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .appointments-doctor {
+    font-size: 9px;
+  }
+
+  .appointments-icon {
+    top: 6px;
+    right: 6px;
+    font-size: 14px;
   }
 }

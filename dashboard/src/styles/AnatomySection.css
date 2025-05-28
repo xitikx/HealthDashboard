@@ -1,15 +1,46 @@
 .anatomy-section {
   position: relative;
-  background-color: #E0F2FE; 
+  background-color: #E0F2FE;
   border-radius: 12px;
   padding: 26px;
-  width: 350px;
-  height: 400px;
+  width: 350px; /* Fixed width for laptop */
+  height: 400px; /* Fixed height for laptop */
   margin-top: -25px;
+  box-sizing: border-box;
 }
 
 .body-image {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: contain;
+}
+
+/* Tablet: ≤ 1024px */
+@media (max-width: 1024px) {
+  .anatomy-section {
+    width: 300px; /* Slightly smaller for tablet */
+    height: 350px;
+    padding: 20px;
+    margin-top: -20px;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
+  .anatomy-section {
+    width: 250px; /* Constrain for mobile */
+    height: 300px;
+    padding: 16px;
+    margin-top: -15px;
+  }
+}
+
+/* Small Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .anatomy-section {
+    width: 200px; /* Fit small screens */
+    height: 250px;
+    padding: 12px;
+    margin-top: -10px;
+  }
 }

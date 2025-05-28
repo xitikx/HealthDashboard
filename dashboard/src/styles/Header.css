@@ -1,11 +1,11 @@
 .header {
   display: flex;
-  flex-direction: column; /* Stack vertically */
+  flex-direction: column;
   padding: 0px 4px;
   background-color: white;
   border-radius: 12px 12px 0 0;
-  gap: 20px; /* Space between rows */
-  width: 100%; /* Take the full width of the parent (center-section) */
+  gap: 20px;
+  width: 100%;
 }
 
 .top-bar {
@@ -41,6 +41,10 @@
   border-radius: 8px;
 }
 
+.bell-wrapper {
+  display: inline-flex; /* Keep bell inline with other icons by default */
+}
+
 .dashboard {
   color: #023c92;
 }
@@ -67,12 +71,111 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .search-bar {
-    width: 200px;
+/* Tablet: ≤ 1024px */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0px 3px;
+    gap: 16px;
   }
 
+  .search-bar {
+    width: 400px;
+    padding: 6px 10px;
+  }
+
+  .header-icons {
+    gap: 12px;
+    padding: 6px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+  }
+
+  .dashboard-period {
+    font-size: 13px;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
   .header {
-    width: 100%; /* Ensure header takes available width on mobile */
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px 2px;
+    gap: 12px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .top-bar {
+    flex-direction: row; /* Keep search-bar and header-icons side by side */
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-bar {
+    width: 90%; /* Reduce width to fit alongside header-icons */
+    padding: 5px 8px;
+  }
+
+  .header-icons {
+    flex-wrap: wrap; /* Allow icons to wrap */
+    gap: 8px;
+    padding: 5px;
+    width: 5%; /* Take remaining space */
+    justify-content: flex-end;
+  }
+
+  .bell-wrapper {
+    flex-basis: 100%; /* Force bell to take full width, moving it to a new line */
+    justify-content: flex-end;
+  }
+
+  .dashboard-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .dashboard-title {
+    font-size: 20px;
+  }
+
+  .dashboard-period {
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .header {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0px 1px;
+    gap: 8px;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .top-bar {
+    gap: 6px;
+  }
+
+  .search-bar {
+    width: 90%;
+    padding: 4px 6px;
+  }
+
+  .header-icons {
+    gap: 6px;
+    padding: 4px;
+    width: 5%;
+  }
+
+  .dashboard-title {
+    font-size: 18px;
+  }
+
+  .dashboard-period {
+    font-size: 11px;
   }
 }

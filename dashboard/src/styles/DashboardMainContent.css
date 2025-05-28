@@ -4,8 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin: 6px 16px 16px 0px; /* Spacing on right, bottom, and left */
-  border-radius: 0 0 12px 12px; /* Rounded corners on bottom only */
+  margin: 6px 16px 16px 0px;
+  border-radius: 0 0 12px 12px;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -15,29 +15,65 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  flex: 1; /* Takes up available space, matching the width of image-health-container */
+  flex: 1;
 }
 
 .image-health-container {
   display: flex;
   flex-direction: row;
   width: 100%;
-  gap: 16px; /* Spacing between the image and health data */
+  gap: 16px;
   margin-left: 14px;
 }
 
-
-
 @media (max-width: 1024px) {
   .dashboard-main-content {
-    padding: 16px; /* Adjust padding for smaller screens */
+    padding: 16px;
   }
 
   .image-health-container {
-    flex-direction: column; /* Stack Anatomy and Health Data on smaller screens */
+    flex-direction: column;
   }
 
   .left-column {
-    width: 100%; /* Ensure full width on smaller screens */
+    width: 100%;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
+  .dashboard-main-content {
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .left-column {
+    gap: 16px;
+  }
+
+  .image-health-container {
+    flex-direction: row;
+    gap: 12px;
+    width: 90%; /* Leave space on the sides for white background */
+    margin: 8px auto; /* Center the container */
+    align-items: stretch;
+  }
+}
+
+/* Small Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .dashboard-main-content {
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .left-column {
+    gap: 12px;
+  }
+
+  .image-health-container {
+    gap: 8px;
+    width: 85%; /* Further reduce width for smaller screens */
+    margin: 6px auto;
   }
 }

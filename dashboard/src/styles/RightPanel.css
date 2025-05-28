@@ -1,13 +1,13 @@
 .right-panel {
-  width: 550px; /* Match the Sidebar's width for symmetry */
+  width: 550px;
   background-color: #E0F2FE;
   padding: 16px 20px;
   border-radius: 10px 50px 50px 10px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  height: auto; /* Let height grow with content */
-  margin: 16px 16px 16px 16px; /* Spacing on right, bottom, and left */
+  height: auto;
+  margin: 16px 16px 16px 16px;
 }
 
 @media (max-width: 1024px) {
@@ -16,5 +16,28 @@
     border-radius: 12px;
     border-left: none;
     padding: 16px;
+    gap: 20px;
+    margin: 12px;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
+  .right-panel {
+    width: 90%; /* Leave space on the sides for white background */
+    margin: 8px auto; /* Center the panel */
+    padding: 12px;
+    gap: 16px;
+  }
+}
+
+/* Small Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .right-panel {
+    width: 85%; /* Further reduce width for smaller screens */
+    margin: 6px auto;
+    padding: 8px;
+    gap: 12px;
+    border-radius: 8px;
   }
 }

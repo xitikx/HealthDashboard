@@ -1,3 +1,9 @@
+/* Define default CSS custom properties */
+:root {
+  --bar-width: 6px;
+  --gap-between-bars: 14px;
+}
+
 .activity-feed {
   padding: 24px;
   width: 100%;
@@ -30,20 +36,20 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  overflow-x: auto; /* Allow horizontal scrolling if parent is narrow */
+  overflow-x: auto;
 }
 
 .bars-container {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap: 14px;
-  min-width: 546px; /* Match totalWidth */
+  gap: var(--gap-between-bars);
+  min-width: 546px;
   position: relative;
 }
 
 .bar {
-  width: 6px;
+  width: var(--bar-width);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,12 +86,115 @@
 
 .day-labels {
   position: relative;
-  min-width: 546px; /* Match totalWidth */
-  height: 20px; /* Fixed height for labels */
+  min-width: 546px;
+  height: 20px;
 }
 
 .day-labels span {
   font-size: 12px;
   color: #A0AEC0;
   text-align: center;
+}
+
+/* Tablet: ≤ 1024px */
+@media (max-width: 1024px) {
+  :root {
+    --bar-width: 5px;
+    --gap-between-bars: 12px;
+  }
+
+  .activity-feed {
+    padding: 20px;
+  }
+
+  .activity-header h3 {
+    font-size: 16px;
+  }
+
+  .activity-feed p {
+    font-size: 13px;
+  }
+
+  .bars-container,
+  .day-labels {
+    min-width: 462px;
+  }
+
+  .day-labels {
+    height: 18px;
+  }
+
+  .day-labels span {
+    font-size: 11px;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
+  :root {
+    /* bar-width and gap-between-bars are now dynamically calculated in JSX */
+  }
+
+  .activity-feed {
+    width: 90%; /* Leave space on the sides for white background */
+    margin: 8px auto; /* Center the feed */
+    padding: 16px;
+  }
+
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .activity-header h3 {
+    font-size: 14px;
+  }
+
+  .activity-feed p {
+    font-size: 12px;
+  }
+
+  .bars-container,
+  .day-labels {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .day-labels {
+    height: 16px;
+  }
+
+  .day-labels span {
+    font-size: 10px;
+  }
+}
+
+/* Small Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .activity-feed {
+    width: 85%; /* Further reduce width for smaller screens */
+    margin: 6px auto;
+    padding: 12px;
+  }
+
+  .activity-header {
+    gap: 6px;
+  }
+
+  .activity-header h3 {
+    font-size: 13px;
+  }
+
+  .activity-feed p {
+    font-size: 11px;
+  }
+
+  .day-labels {
+    height: 14px;
+  }
+
+  .day-labels span {
+    font-size: 9px;
+  }
 }
