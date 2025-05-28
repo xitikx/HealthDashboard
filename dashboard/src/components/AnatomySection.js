@@ -1,5 +1,5 @@
-import { Star } from 'lucide-react';
-import { healthIndicators } from '../data/healthData';
+// import { Star } from 'lucide-react';
+// import { healthIndicators } from '../data/healthData';
 import bodyImage from '../assets/anatomy.png'; // Placeholder image
 import '../styles/AnatomySection.css';
 

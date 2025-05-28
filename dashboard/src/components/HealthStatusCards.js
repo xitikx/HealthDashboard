@@ -39,7 +39,7 @@ function HealthStatusCards() {
           })}
       </div>
       <div className="details">
-        <a href="#" className="details-link">
+        <a href="/" className="details-link">
           Details <ChevronRight size={16} />
         </a>
       </div>
