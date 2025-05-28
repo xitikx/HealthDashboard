@@ -1,4 +1,3 @@
-// import { ChevronRight } from 'lucide-react';
 import { activityData } from '../data/activity';
 import '../styles/ActivityFeed.css';
 
