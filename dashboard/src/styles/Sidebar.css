@@ -1,0 +1,79 @@
+.sidebar {
+  width: 220px;
+  background-color: #E0F2FE; /* Light blue background */
+  padding: 20px 16px; /* Padding inside the sidebar */
+  margin: 16px 16px 16px 16px; /* Keep margins for white content-wrapper visibility */
+  height: calc(100% - 32px); /* Subtract 16px top + 16px bottom padding of app-container */
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 50px; /* Keep original rounded corners */
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width/height */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px; /* Add spacing below the logo */
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.logo-health {
+  color: #10c7cd;
+}
+
+.logo-care {
+  color: #023c92;
+}
+
+.sidebar-heading {
+  font-size: 12px;
+  color: #A0AEC0; /* Gray color for section headings */
+  margin-bottom: 24px;
+  font-weight: 500;
+  padding-left: 25px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  padding-left: 25px;
+  color: #4A5568; /* Gray text for nav items */
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.nav-item.active {
+  color: #023c92; /* Blue text (same as logo-care) */
+  font-weight: 600; /* Optional: to make it look a bit bolder */
+}
+
+.nav-item.active svg {
+  color: #023c92; /* Blue icon */
+}
+
+.nav-item svg {
+  color: #4A5568; /* Gray icons for non-active items */
+}
+
+.settings-container {
+  margin-top: auto; /* Pushes the settings section to the bottom */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
+}

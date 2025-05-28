@@ -1,0 +1,58 @@
+.appointments-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+  min-width: 300px;
+}
+
+.appointments-card {
+  position: relative;
+  padding: 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.appointments-card.blue {
+  background-color: #023c92;
+  color: #ffffff;
+  width: 160px;
+}
+
+.appointments-card.purple {
+  background-color: #cfd7fa;
+  color: #023c92;
+  flex: 1;
+}
+
+.appointments-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.appointments-doctor {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.appointments-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .appointments-container {
+    flex-direction: column;
+    min-width: auto;
+  }
+
+  .appointments-card.blue,
+  .appointments-card.purple {
+    width: 100%;
+  }
+}

@@ -1,0 +1,90 @@
+.upcoming-schedule {
+  padding: 0; /* RightPanel already has padding */
+  width: 100%; /* Take the full width of the parent (RightPanel) */
+  background-color: #E0F2FE; /* Light blue background to match RightPanel */
+  border-radius: 12px; /* Rounded corners */
+  display: flex;
+  flex-direction: column; /* Stack day sections vertically */
+  gap: 16px; /* Space between title and day sections */
+}
+
+.schedule-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #023c92; /* Blue color for the title */
+  padding: 0 12px; /* Align with Calendar padding */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.day-section {
+  background-color: #E0F2FE; /* Match RightPanel background */
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.day-header {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A5568; /* Dark color for day headers */
+  margin-bottom: 12px;
+}
+
+.appointments {
+  display: flex;
+  flex-direction: row; /* Display cards side by side */
+  gap: 18px; /* Space between cards */
+}
+
+.appointments.thursday .appointment-card:first-child {
+  flex: 2; /* div1 longer */
+}
+
+.appointments.thursday .appointment-card:last-child {
+  flex: 1; /* div2 shorter */
+}
+
+.appointments.saturday {
+  justify-content: flex-start; /* Left-align cards */
+}
+
+.appointments.saturday .appointment-card {
+  width: 150px; /* Same size for div3 and div4 */
+}
+
+.appointment-card {
+  position: relative; /* For absolute positioning of icon */
+  padding: 30px; /* Adjusted padding */
+  border-radius: 20px;
+  background-color: #cfd7fa; /* Background for all cards */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Stack details vertically */
+}
+
+.appointment-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+}
+
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #023c92; /* Font color for all text */
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.appointment-time {
+  font-size: 12px;
+  color: #023c92; /* Font color for all text */
+  margin-top: 3px;
+}

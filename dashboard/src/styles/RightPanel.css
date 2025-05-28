@@ -1,0 +1,20 @@
+.right-panel {
+  width: 550px; /* Match the Sidebar's width for symmetry */
+  background-color: #E0F2FE;
+  padding: 16px 20px;
+  border-radius: 10px 50px 50px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: auto; /* Let height grow with content */
+  margin: 16px 16px 16px 16px; /* Spacing on right, bottom, and left */
+}
+
+@media (max-width: 1024px) {
+  .right-panel {
+    width: 100%;
+    border-radius: 12px;
+    border-left: none;
+    padding: 16px;
+  }
+}

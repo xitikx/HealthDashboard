@@ -1,0 +1,42 @@
+/* Reset default margins and ensure full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto; /* Ensure body can scroll if content overflows */
+}
+
+.app-container {
+  display: flex;
+  background-color: #E0F2FE; /* Full light blue background */
+  min-height: 100vh; /* Allow growth beyond viewport height */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  /* overflow: hidden; */ /* Already commented out, kept for reference */
+}
+
+.center-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: none;
+  padding: 16px;
+}
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack Sidebar, center-section, and RightPanel vertically */
+  }
+
+  .center-section {
+    max-width: 100%;
+  }
+}

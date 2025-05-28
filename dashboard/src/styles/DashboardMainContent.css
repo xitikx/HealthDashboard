@@ -1,0 +1,43 @@
+.dashboard-main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 6px 16px 16px 0px; /* Spacing on right, bottom, and left */
+  border-radius: 0 0 12px 12px; /* Rounded corners on bottom only */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1; /* Takes up available space, matching the width of image-health-container */
+}
+
+.image-health-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 16px; /* Spacing between the image and health data */
+  margin-left: 14px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .dashboard-main-content {
+    padding: 16px; /* Adjust padding for smaller screens */
+  }
+
+  .image-health-container {
+    flex-direction: column; /* Stack Anatomy and Health Data on smaller screens */
+  }
+
+  .left-column {
+    width: 100%; /* Ensure full width on smaller screens */
+  }
+}

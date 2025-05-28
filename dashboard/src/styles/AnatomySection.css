@@ -1,0 +1,15 @@
+.anatomy-section {
+  position: relative;
+  background-color: #E0F2FE; 
+  border-radius: 12px;
+  padding: 26px;
+  width: 350px;
+  height: 400px;
+  margin-top: -25px
+}
+
+.body-image {
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;
+}

@@ -1,0 +1,210 @@
+.calendar {
+  font-family: sans-serif;
+  padding: 0; /* Remove padding since RightPanel already has padding */
+  width: 100%; /* Take the full width of the parent (RightPanel) */
+  background-color: #E0F2FE; /* Light blue background to match RightPanel */
+  border-radius: 12px; /* Rounded corners */
+}
+
+/* Calendar header container */
+.calendar-header {
+  margin-bottom: 16px; /* Space between header and days */
+  padding: 8px 12px; /* Padding inside the header */
+  background-color: #E0F2FE; /* Match RightPanel background */
+}
+
+/* First row: Avatar and plus button, right-aligned */
+.header-row-1 {
+  display: flex;
+  justify-content: flex-end; /* Right-align the items */
+  align-items: center;
+  gap: 8px; /* Space between avatar and plus button */
+  margin-bottom: 8px; /* Space between the two header rows */
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* Circular avatar size */
+  height: 32px;
+  background-color: #023c92; /* Blue background for avatar */
+  border-radius: 50%; /* Circular shape */
+}
+
+.plus-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* Circular button size */
+  height: 32px;
+  background-color: #023c92; /* Blue background for button */
+  border-radius: 50%; /* Circular shape */
+}
+
+/* Second row: Month and year on the left, arrows on the right */
+.header-row-2 {
+  display: flex;
+  justify-content: space-between; /* Month/year on left, arrows on right */
+  align-items: center;
+}
+
+.month-year {
+  font-size: 18px;
+  font-weight: 600;
+  color: #023c92; /* Blue color to match theme */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.month-navigation {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Tight spacing between arrows */
+}
+
+.arrow {
+  cursor: pointer;
+  color: #023c92; /* Blue color to match theme */
+}
+
+/* Days and dates row */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 12px; /* Align with header padding */
+}
+
+.day-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px; /* Adjusted to fit 7 days within 252px */
+}
+
+.day-cell.tuesday {
+  background-color: rgba(224, 242, 254, 0.3); /* Low-opacity #E0F2FE */
+}
+
+.day {
+  font-weight: 100;
+  font-size: 10px;
+  color: #023c92; /* Dark color for days */
+}
+
+.date {
+  font-size: 15px;
+  color: #023c92; /* Gray color for dates */
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Main grid of time slots */
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px; /* Align with header padding */
+  gap: 5px;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slot {
+  width: 36px;
+  height: 22px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 100;
+  font-family: 'Poppins', sans-serif;
+  color: #023c92; /* Default text color */
+  position: relative; /* For pseudo-element positioning */
+}
+
+.slot.tuesday::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 123, 255, 0.1); /* Low-opacity #E0F2FE */
+  border-radius: 12px; /* Match slot border-radius */
+  z-index: 5; /* Behind existing background and content */
+  padding: 4px, 0;
+}
+
+.slot.light {
+  background-color: #e3f2fd; /* Light blue */
+}
+
+.slot.gray {
+  background-color: #cfd8dc; /* Grey */
+  color: #333;
+  position: relative; /* For positioning the white dot */
+}
+
+.slot.gray::after {
+  content: '';
+  width: 4px; /* Small white dot */
+  height: 4px;
+  background-color: white;
+  border-radius: 50%; /* Circular shape */
+  position: absolute;
+  bottom: 2px; /* Position below the centered text, within the background */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+}
+
+.slot.blue {
+  background-color: #023c92; /* Blue */
+  color: white;
+}
+
+.slot.empty {
+  background-color: transparent;
+}
+
+/* Ensure no overflow */
+.day-cell,
+.slot {
+  flex: 0 0 36px; /* Fixed width, no growing or shrinking */
+  min-width: 36px; /* Ensure minimum width */
+}
+
+.header-row,
+.time-row {
+  display: flex;
+  gap: 0; /* Remove any extra gap since we're using fixed widths */
+}
+
+
+
+
+
+.calendar-grid {
+  display: flex;
+  padding: 0 12px;
+  gap: 0;
+}
+
+.calendar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  gap: 5px;
+  padding: 4px 0;
+}
+
+.tuesday-highlight {
+  background-color: rgba(0, 123, 255, 0.08); /* subtle blue */
+  border-radius: 12px;
+}
